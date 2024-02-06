@@ -14,7 +14,7 @@ interface ProductPageProps {
    },
 }
 
-const Course = ({ params }: ProductPageProps) => {
+const ProductCourses = ({ params }: ProductPageProps) => {
   const router = useRouter()
   const items = data;
   const products = items.filter((item) => item.id == params.courseId)
@@ -114,4 +114,4 @@ const onBuyNow = (item: Product) => {
   )
 }
 
-export default Course
+export default ProductCourses
