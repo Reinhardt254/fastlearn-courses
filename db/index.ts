@@ -1,4 +1,4 @@
-interface Course {
+interface Coursess {
    id: number;
    title: string;
    description: string;
@@ -8,7 +8,7 @@ interface Course {
    text: string;
  }
  
- export const data: Course[] = [
+ export const data: Coursess[] = [
    {
      id: 1,
      title: "Web Development",
