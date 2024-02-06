@@ -13,7 +13,6 @@ interface ProductPageProps {
    params: {
       courseId: number;
    },
-   data: Product;
 }
 
 
