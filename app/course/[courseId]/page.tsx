@@ -14,7 +14,7 @@ interface ProductPageProps {
    },
 }
 
-const Course: React.FC<ProductPageProps> = ({ params }) => {
+const Course = ({ params }: ProductPageProps) => {
   const router = useRouter()
   const items = data;
   const products = items.filter((item) => item.id == params.courseId)
