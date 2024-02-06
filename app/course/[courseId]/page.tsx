@@ -7,16 +7,14 @@ import { useRouter } from 'next/navigation';
 import React, { MouseEventHandler } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
 import { Product } from '@/types' ;
-import Products from '@/app/products/page';
 
 interface ProductPageProps {
    params: {
-      courseId: number;
+      courseId?: number;
    },
 }
 
-
-const Course: React.FC<ProductPageProps> = ({params}) => {
+const Course: React.FC<ProductPageProps> = ({ params }) => {
   const router = useRouter()
   const items = data;
   const products = items.filter((item) => item.id == params.courseId)
