@@ -24,7 +24,7 @@ const Sales = async () => {
      },
    });
 
-   const modifiedData: productColumn[] = data.map((item) =>({
+   const modifiedData: productColumn[] = data.map((item: any) =>({
       id: item.id,
       title: item.title,
       price: item.price,
