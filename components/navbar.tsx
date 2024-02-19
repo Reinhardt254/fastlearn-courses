@@ -86,7 +86,7 @@ const Navbar = () => {
     
       <div className='max-sm:hidden'>
         <div className='flex space-x-5 mr-8'>
-          {routes.map((route)=>(
+          {routes.map((route: any)=>(
            <div key={route.label}> 
             <Link
             href={route.href}
@@ -130,7 +130,7 @@ const Navbar = () => {
                  <UserButton afterSignOutUrl="/"/>
                </div>
                 <div className='flex flex-col items-center justify-center h-4/5 space-y-5'>
-                  {routes.map((route)=>(
+                  {routes.map((route: any)=>(
                   <div key={route.label}> 
                     <Link
                       href={route.href}

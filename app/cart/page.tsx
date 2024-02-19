@@ -55,7 +55,7 @@ const Cart = () => {
       </div>
       </div>
       <div className='w-full h-full flex items-center justify-center flex-col'>
-      {cart.items.map((item)=>
+      {cart.items.map((item : any)=>
       <div 
        key={item.id}
        className='w-full md:w-1/2 h-full flex justify-center items-center bg-white shadow-sm m-2 p-2'

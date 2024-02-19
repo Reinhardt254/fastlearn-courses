@@ -32,7 +32,7 @@ const TableMessages: React.FC<productColumnArray> = ({ data }) => {
               </TableRow>
             </TableHeader>
             {
-            data.map((items)=>(
+            data.map((items: any)=>(
             <TableBody key={items.id}>
               <TableRow>
                 {/* <TableCell className="font-medium">INV001</TableCell> */}

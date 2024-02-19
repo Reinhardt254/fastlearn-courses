@@ -21,7 +21,7 @@ const Courses: React.FC<ProductListProps> = ({ data }) => {
         className='grid-cols-2 grid h-ful m-1 md:grid-cols-3 md:w-2/3 w-full'
         >
         {/* {data.length == 0 ? <div className='font-semibold text-black'>No courses available</div> : <div></div>} */}
-        {data.map((item)=>( 
+        {data.map((item: any)=>( 
          <div key={item.id} >
          <div
            onClick = {() => handleClick(item?.id)}

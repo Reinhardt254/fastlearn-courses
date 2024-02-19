@@ -56,7 +56,7 @@ const AdminCourses: React.FC<ProductListProps> = ({ data }) => {
         >
          <Toaster />
         {/* {data.length == 0 ? <div className='font-semibold text-black'>No courses available</div> : <div></div>} */}
-        {data.map((item)=>( 
+        {data.map((item: any)=>( 
          <div key={item.id} >
          <div
            className='p-1'

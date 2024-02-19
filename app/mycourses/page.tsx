@@ -47,7 +47,7 @@ const MyCourses = async () => {
           </div>
         </div>
         <div className="w-full h-full flex-col justify-center items-center grid md:grid-cols-2">
-          {data.map((item) => (
+          {data.map((item: any) => (
             <div key={item.id}>
               <div
                 //   onClick = {() => handleClick(item?.id)}

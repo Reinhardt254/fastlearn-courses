@@ -27,7 +27,7 @@ const CourseItem: React.FC<ProductListProps> = ({ data }) => {
 
   return (
     <div className="w-full h-full flex justify-center items-center mt-2">
-      {data.map((item) => (
+      {data.map((item: any) => (
         <div className="md:w-1/2" key={item.description}>
           <Toaster />
           <div className="">
