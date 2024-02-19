@@ -1,0 +1,66 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model courses {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  description  String
+  price        String
+  creator      String
+  requirements String
+  text         String
+  link         String
+  image        String
+  // orders       orders[] @relation(name:"StoreToOrder")
+
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt
+}
+
+model user {
+   id          String @id @default(auto()) @map("_id") @db.ObjectId
+   authId      String @unique
+   firstname   String
+   surname     String
+   email       String
+   address     String
+
+   orders      orders[]
+
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+}
+
+model orders {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  title        String
+  description  String
+  price        String
+  creator      String
+  requirements String
+  text         String
+  link         String
+  image        String
+  authId       String 
+
+  userId       String @db.ObjectId
+  user         user @relation( fields: [userId], references: [id])
+
+ createdAt     DateTime  @default(now()) @map(name: "created_at")
+
+   @@index([userId])
+}
+
+model message {
+  id           String @id @default(auto()) @map("_id") @db.ObjectId
+  name         String
+  email        String
+  message      String
+
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+}

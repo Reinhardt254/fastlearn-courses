@@ -2,7 +2,7 @@
 
 import useCart from '@/hooks/use-cart'
 import { cn } from '@/lib/utils'
-import { UserButton } from '@clerk/nextjs'
+import { SignInButton, UserButton, currentUser } from '@clerk/nextjs'
 import { AlignCenter, BarChart3, CarTaxiFrontIcon, ShoppingCart, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -26,6 +26,11 @@ const Navbar = () => {
       active: pathname === "/",
     },
     {
+      href:"/products",
+      label:"Store",
+      active: pathname === "/products",
+    },
+    {
       href:"/about",
       label:"About Us",
       active: pathname === "/about",
@@ -34,6 +39,11 @@ const Navbar = () => {
       href:"/contact",
       label:"Contact Us",
       active: pathname === "/contact",
+    },
+    {
+      href:"/dashboard",
+      label:"My Courses",
+      active: pathname === "/mycourses",
     },
   ]
 
@@ -62,7 +72,7 @@ const Navbar = () => {
     <div className='flex'>
       <Link 
         href="/cart"
-        className='relative pr-3'
+        className='relative pr-5'
        >
           <div className='relative flex'>
           <ShoppingCart color='black' height={25} width={25} />
@@ -73,8 +83,9 @@ const Navbar = () => {
           </div>
           </div>
         </Link>
+    
       <div className='max-sm:hidden'>
-        <div className='flex space-x-3 mr-8'>
+        <div className='flex space-x-5 mr-8'>
           {routes.map((route)=>(
            <div key={route.label}> 
             <Link
@@ -86,6 +97,9 @@ const Navbar = () => {
            </div>
           ))}
         </div>
+      </div>
+      <div className='mr-7 max-sm:hidden'>
+          <UserButton afterSignOutUrl="/"/>
       </div>
     </div>
 
@@ -113,7 +127,7 @@ const Navbar = () => {
                 />
                </div>
                <div className=' absolute top-4 pl-2'>
-                 {/* <UserButton afterSignOutUrl="/"/> */}
+                 <UserButton afterSignOutUrl="/"/>
                </div>
                 <div className='flex flex-col items-center justify-center h-4/5 space-y-5'>
                   {routes.map((route)=>(

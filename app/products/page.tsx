@@ -1,11 +1,11 @@
-import Courses from '@/components/courses'
-import React from 'react'
+import Courseslists from '@/components/courseslists'
+
 
 const Products = () => {
   return (
     <div>
       <div>
-        <Courses />
+        <Courseslists />
       </div>
     </div>
   )

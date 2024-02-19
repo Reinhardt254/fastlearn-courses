@@ -1,52 +1,47 @@
 "use client"
 
-import { data } from '@/db'
+import { Product } from '@/types'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
-const Courses = () => {
+interface ProductListProps {
+   data: Product[];
+ }
+
+const Courses: React.FC<ProductListProps> = ({ data }) => {
    const router = useRouter()
 
-   const handleClick = (id: number) => {
-      router.push(`/course/${id}`)
+   const handleClick = (id: string) => {
+      router.push(`/course/${id}`);
    }
-
-   // const [isMounted, setIsMounted] = useState(false);
-
-   // useEffect(() => {
-   //    setIsMounted(true)
-   // }, [])
-
-   // if(isMounted){
-   //    return null;
-   // }
    
   return (
-    <div className='w-full h-full flex justify-center items-center'>
+    <div className='w-full min-h-svh flex justify-center '>
       <div 
-        className='grid-cols-2 grid h-full m-2 md:grid-cols-3 md:w-2/3 w-full'
+        className='grid-cols-2 grid h-ful m-1 md:grid-cols-3 md:w-2/3 w-full'
         >
+        {/* {data.length == 0 ? <div className='font-semibold text-black'>No courses available</div> : <div></div>} */}
         {data.map((item)=>( 
          <div key={item.id} >
          <div
            onClick = {() => handleClick(item?.id)}
            className='p-1'
           >
-            <div className=''>
-               <div className=' w-auto'>
+            <div className='md:h-48 w-full h-28'>
+               <div className='h-full w-full relative'>
                <Image 
-                src="/dev.png"
-                height={150}
-                width={300}
+                src={item.image}
+                fill={true}
                 alt="course" 
-                className='rounded-t-md min-w-full'
+                loading="lazy"
+                className='rounded min-w-full'
                />
                </div>
-               <div className='text-start bg-white rounded-b-md'>
+               <div className='text-start bg-white rounded-b-md relative shadow-sm'>
                   <div className='w-auto p-3'>
                    <p className='font-semibold text-slate-900 text-lg'>{item.title}</p>
-                   <p className='font-semibold text-slate-700'>{item.description}</p>
-                  <p className='font-semibold text-blue-500 text-lg'>{item.payment}</p>
+                   <p className='font-semibold text-slate-700 line-clamp-2'>{item.description}</p>
+                  <p className='font-semibold text-blue-500 text-lg'>${item.price}</p>
                   </div>
                </div>
             </div>

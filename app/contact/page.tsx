@@ -36,7 +36,7 @@ const Contact = () => {
   const onSubmit = async (data: FieldValues) => {
     setIsDisabled(true)
     try{
-      await axios.post("/api/messages", data)
+      await axios.post("/api/message", data)
       toast.success("successfully sent")
     }catch(error){
       toast.error("an error occured") 
@@ -91,9 +91,9 @@ const Contact = () => {
             <button 
               disabled={disabled}
               type="submit"
-              className='bg-blue-700 disabled:bg-gray-500 py-2 px-5 rounded'
+              className='bg-blue-700 disabled:bg-gray-500 py-2 px-6 rounded'
               >
-               <p className='text-gray-300'>Submit</p>
+               <p className='text-gray-300 text-lg'>Submit</p>
             </button>
               <div>
              <div>

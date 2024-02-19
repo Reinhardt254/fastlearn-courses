@@ -1,14 +1,14 @@
-import React from 'react'
-import ProductsForm from '../components/products-form'
+import React from "react";
+import ProductsForm from "../(admin-components)/products-form";
 
-const Dashbord = () => {
+const CoursePosts = () => {
   return (
     <div>
       <div>
-         <ProductsForm />
+        <ProductsForm />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashbord
+export default CoursePosts;

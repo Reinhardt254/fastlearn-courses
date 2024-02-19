@@ -1,16 +1,49 @@
+import Image from 'next/image'
 import React from 'react'
 
 const About = () => {
   return (
-    <div className='h-full w-full flex justify-center items-center'>
-      <div className='px-2 md:w-2/3'>
-        <p className='text-lg text-slate-900'>
-          Welcome to Survey Finder, your go-to platform for finding paid surveys, focus groups, clinical trials, and online research opportunities in the USA. We understand the value of your time and the desire to make some extra income or contribute to valuable research projects, which is why we have created this user-friendly website to connect you with legitimate and rewarding opportunities. At Survey Finder, we curate a comprehensive database of paid surveys, focus groups, clinical trials, and online research studies that are available nationwide. Our team works diligently to verify the authenticity and reliability of each opportunity listed on our platform, ensuring that you have access to genuine and well-paying opportunities. Whether you are looking to earn some extra cash or participate in cutting-edge research, our website offers a user-friendly interface that allows you to browse through various categories, including paid surveys, focus groups, clinical trials, and online research studies. You can easily filter and search for opportunities based on your preferences, such as location, compensation, or research topic. We strive to provide you with the most up-to-date and relevant opportunities available in the USA. Our team regularly updates the listings and adds new studies to ensure that you have access to a wide range of opportunities to choose from. Additionally, we provide detailed information about each opportunity, including eligibility criteria, compensation details, study duration, and any specific requirements. At Surveys Finder, we prioritize the security and privacy of our users. We implement industry-standard security measures to protect your personal information and ensure a safe browsing experience on our website. We are passionate about connecting individuals like you with valuable research opportunities and helping you earn money through paid surveys and focus groups. By participating in these studies, you not only have the chance to earn rewards but also contribute to important research projects that can make a difference. Thank you for choosing Survey Finder as your trusted resource for finding paid surveys, focus groups, clinical trials, and online research studies in the USA. We are dedicated to continually improving our platform and providing you with the best possible experience. If you have any questions or feedback, please dont hesitate to contact us. Happy exploring and earning!
+    <div className='h-full bg-white w-screen pb-20 flex items-center justify-center'>
+    <div className='w-full h-full flex'>
+    <div className='md:w-1/2 w-full pr-2'>
+      <div className='px-3 pt-3 pr-2 md:px-10'>
+       <h1 className='text-3xl text-slate-900'>Our Story</h1>
+       <div>
+       <h1 className='text-blue-500 text-xl pt-3'>Who we are</h1>
+       <p className='text-slate-900 pr-2'>
+       Welcome to FastLearn, where knowledge meets innovation! At FastLearn, we are more than just an online store  we are a gateway to a world of endless learning possibilities. Our mission is to empower individuals with the skills and insights needed to thrive in the rapidly evolving landscape of technology, personal development, and professional growth.
+       </p>
+       </div>
 
+       <div>
+       <h1 className='text-blue-500 text-xl pt-3'>What we do</h1>
+       <p className='text-slate-900 pr-2'>
+       At FastLearn, we curate a diverse selection of courses that span the realms of artificial intelligence, programming languages, self-development, career advancement, and mastery skills. Our platform is designed to cater to learners of all levels, from beginners looking to embark on a new learning journey to seasoned professionals seeking to stay ahead in their fields. With a commitment to excellence, we collaborate with industry experts and thought leaders to deliver high-quality, up-to-date content that ensures our learners acquire relevant and practical 
+       </p>
+       </div>
 
-        </p>
+       <div>
+       <h1 className='text-blue-500 text-xl pt-3'>Why we do it</h1>
+       <p className='text-slate-900 pr-2'>
+       In a world driven by innovation and constant change, staying ahead of the curve is not just an advantage  it Is a necessity. FastLearn was founded on the belief that education should be accessible, engaging, and impactful. We understand the transformative power of learning, and we are passionate about providing a platform that empowers individuals to reach their full potential. Whether you aspire to build cutting-edge AI applications, master programming languages, enhance your personal development, or advance in your career, FastLearn is here to guide you on your learning journey. Join us, and let Us navigate the future of knowledge together. FastLearn where learning is fast, fulfilling, and future-focused.
+       </p>
+       </div>
       </div>
+
     </div>
+    <div className='w-1/2 max-sm:hidden max-md:hidden'>
+    <div className=' flex h-full justify-center items-center rounded-tl-full  w-full max-sm:hidden max-md:hidden'>
+          <Image
+            src="/logoimage.png"
+            height={400}
+            width={400}
+            alt="image"
+            className='rounded-full'
+          />
+       </div>
+    </div>
+   </div>
+ </div>
   )
 }
 

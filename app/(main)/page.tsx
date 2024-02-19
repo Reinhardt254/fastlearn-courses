@@ -1,9 +1,12 @@
+import { getCourses } from '@/actions/postCourses'
 import Courses from '@/components/courses'
+import Courseslists from '@/components/courseslists'
 import Desc from '@/components/desc'
 import Landing from '@/components/landing'
 import React from 'react'
 
-const Home = () => {
+const Home = async () => {
+
   return (
     <div>
        <div>
@@ -12,9 +15,9 @@ const Home = () => {
        <div className='bg-slate-100'>
          <Desc />
        </div>
-       {/* <div className='bg-slate-100 pt-5 mt-5'>
-         <Courses />
-       </div> */}
+       <div className='bg-white pt-5 mt-5 border-t-2'>
+         <Courseslists />
+       </div>
     </div>
   )
 }

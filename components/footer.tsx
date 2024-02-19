@@ -25,7 +25,7 @@ const Footer = () => {
      
         <div className="pt-2">
           <h1 className="font-bold text-white">Socials</h1>
-          <div className='flex mt-3 space-x-3'>
+          {/* <div className='flex mt-3 space-x-3'>
            <Link href="">
                 <Image 
                   src="https://upload.wikimedia.org/wikipedia/commons/9/95/Instagram_logo_2022.svg"
@@ -34,7 +34,7 @@ const Footer = () => {
                   alt="instagram"
                 />
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="flex items-center justify-center pb-4 ">
