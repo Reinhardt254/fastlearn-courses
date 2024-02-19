@@ -1,7 +1,7 @@
 import prismadb from "@/lib/prismadb";
 import client from "@/utils/paypal";
 import { auth } from "@clerk/nextjs";
-import paypal from "@paypal/checkout-server-sdk";
+import paypal, { orders } from "@paypal/checkout-server-sdk";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request, res: Response) {
@@ -13,17 +13,25 @@ export async function POST(req: Request, res: Response) {
       return NextResponse.json("Unauthorized");
     }
 
-    if(!orderID){
-      return NextResponse.json("OrderId required")
+    if (!orderID) {
+      return NextResponse.json("OrderId required");
     }
 
-    if(!items){
-      return NextResponse.json("Order Items are required")
+    if (!items) {
+      return NextResponse.json("Order Items are required");
     }
 
     const PaypalClient = client();
     const request = new paypal.orders.OrdersCaptureRequest(orderID);
-    request.requestBody({});
+    request.requestBody({
+      payment_source: {
+         token: {   
+          type: "BILLING_AGREEMENT",
+          id: orderID,
+         }
+      },
+    });
+
     const response = await PaypalClient.execute(request);
     if (!response) {
       console.log("Some error occured in the backend");
@@ -46,36 +54,36 @@ export async function POST(req: Request, res: Response) {
             surname: response.result.payer.name.surname,
             email: response.result.payer.email_address,
             address: response.result.payer.address.country_code,
-            authId: userId 
+            authId: userId,
           },
         });
       }
 
       const UserData = await prismadb.user.findUnique({
         where: {
-          authId: userId 
+          authId: userId,
         },
       });
 
-      if(!UserData){
-        return NextResponse.json("Unable to create user")
+      if (!UserData) {
+        return NextResponse.json("Unable to create user");
       }
 
       for (const item of items) {
-          await prismadb.orders.create({
-            data: {
-              title: item.title,
-              text: item.text,
-              description: item.description,
-              price: item.price,
-              requirements: item.requirements,
-              creator: item.creator,
-              link: item.link,
-              image: item.image,
-              authId: userId,
-              userId: UserData.id
-            },
-          });
+        await prismadb.orders.create({
+          data: {
+            title: item.title,
+            text: item.text,
+            description: item.description,
+            price: item.price,
+            requirements: item.requirements,
+            creator: item.creator,
+            link: item.link,
+            image: item.image,
+            authId: userId,
+            userId: UserData.id,
+          },
+        });
       }
     }
 
