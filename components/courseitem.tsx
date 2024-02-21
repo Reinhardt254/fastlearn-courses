@@ -36,7 +36,7 @@ const CourseItem: React.FC<ProductListProps> = ({ data }) => {
               height={150}
               width={300}
               alt="course"
-              className=" min-w-full rounde"
+              className=" min-w-full rounde p-2"
             />
           </div>
           <div className="p-2">
@@ -46,7 +46,7 @@ const CourseItem: React.FC<ProductListProps> = ({ data }) => {
             <p className="text-slate-900 font-semibold text-3xl">
               {item.description}
             </p>
-            <p className="text-lg font-bold text-blue-600">{item.price}</p>
+            <p className="text-lg font-bold text-blue-600">${item.price}</p>
             <div className="flex">
               <p className="text-black text-lg font-semibold">Creator:</p>
               <p className="text-lg font-semibold text-blue-600 pl-2">

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const Desc = () => {
   return (
-    <div className='pt-10 bg-white mt-2 border-t-2 pb-10 md:pt-16 md:pb-20'>
+    <div className='pt-1 bg-white mt-2 border-t-2 pb-10 md:pt-16 md:pb-20'>
       <div className='w-full flex-col md:mx-10 md:flex-row flex'>
          <div className='md:bg-blue-500 md:w-1/2 flex h-full justify-center items-center md:rounded-tl-full md:rounded-br-full w-full bg-white'>
             <Image 
