@@ -11,7 +11,7 @@ const Desc = () => {
               height={400}
               width={400}
               alt="image"
-              className='rounded-full py-3 md:py-0'
+              className='rounded-full p-3 md:py-0'
             />
          </div>
          <div className='md:w-1/2 w-full'>

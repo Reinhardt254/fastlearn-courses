@@ -39,7 +39,7 @@ const Courses: React.FC<ProductListProps> = ({ data }) => {
                </div>
                <div className='text-start bg-white rounded-b-md relative shadow-sm'>
                   <div className='w-auto p-3'>
-                   <p className='font-semibold text-slate-900 text-lg'>{item.title}</p>
+                   <p className='font-semibold text-slate-900 text-lg max-sm:line-clamp-2'>{item.title}</p>
                    <p className='font-semibold text-slate-700 line-clamp-2'>{item.description}</p>
                   <p className='font-semibold text-blue-500 text-lg'>${item.price}</p>
                   </div>

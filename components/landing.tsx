@@ -31,6 +31,7 @@ const Landing = () => {
               width={416}
               height={416}
               alt="profile"
+              loading="lazy"
             />
           </div>
         </div>
